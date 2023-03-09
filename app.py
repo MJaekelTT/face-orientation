@@ -8,7 +8,7 @@ from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 
 # Setting custom Page Title and Icon with changed layout and sidebar state
 st.set_page_config(
-    page_title="Face Mesh Detector",
+    page_title="Face Orientation Detection",
     page_icon="🤖",
     layout="centered",
     initial_sidebar_state="expanded",
@@ -199,7 +199,7 @@ def choose_webcam():
 def main():
     local_css("css/styles.css")
     st.markdown(
-        '<h1 align="center">🤖 Face Mesh Detection</h1>',
+        '<h1 align="center">🤖 Face Orientation Detection</h1>',
         unsafe_allow_html=True,
     )
     st.set_option("deprecation.showfileUploaderEncoding", False)
