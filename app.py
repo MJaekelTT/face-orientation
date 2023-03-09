@@ -106,7 +106,7 @@ class FaceMeshVideoProcessor:
                 rmat, jac = cv2.Rodrigues(rot_vec)
 
                 # Get angles
-                angles, mtxR, mtxQ, Qx, Qy, Qz = cv2.RQDecomp3x3(rmat)
+                angles, mtx_r, mtx_q, qx, qy, qz = cv2.RQDecomp3x3(rmat)
 
                 # Get the y rotation degree
                 x = angles[0] * 360
@@ -139,7 +139,7 @@ class FaceMeshVideoProcessor:
                 cv2.putText(image, "y: " + str(np.round(y, 2)), (500, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
                 cv2.putText(image, "z: " + str(np.round(z, 2)), (500, 150), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
         # Flip the image horizontally for a selfie-view display.
-        return  image
+        return image
 
     def recv(self, frame):
         img = frame.to_ndarray(format="bgr24")
